@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Minesweeper</title>
+    <style>
+        .game {
+            width: 85vw;
+            height: 85vh;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        table > tbody > tr > td {
+            position: relative;
+            cursor: pointer;
+        }
+
+        table > tbody > tr > td > span {
+            height: max-content;
+            width: max-content;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            font-size: 1.5rem;
+            display: none;
+        }
+
+        .clicked {
+            background: #ddd !important;
+        }
+
+        .clicked > span {
+            display: block !important;
+            font-size: 1rem !important;
+        }
+    </style>
+</head>
+<body onload="start()">
+<main class="game">
+    <div class="container-fluid h-100">
+        <div class="row text-center" style="height: 7.5%;">
+            <div class="col"><span class="h2 text-success">Time: <span id="time">0</span></span></div>
+            <div class="col"><span class="h1 text-danger">Minesweeper</span></div>
+            <div class="col"><span class="h2 text-warning">Mines: <span id="mines"></span></span></div>
+        </div>
+        <table id="board" class="table table-bordered text-center w-100" style="height: 90%;"></table>
+        <div class="row text-center justify-content-center" style="height: 2.5%;">
+            <div class="col-6">
+                <button class="btn btn-outline-primary w-75" onclick="window.location.reload();">New Game</button>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
